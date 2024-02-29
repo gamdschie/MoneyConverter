@@ -1,0 +1,99 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoneyConverterFalchetto.MainPage"
+             Title="">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--hier mache ich einen background indem ich einfach noch einen frame als rechteck erstelle-->
+
+        <Frame
+            BackgroundColor="#212121"
+            Opacity="1"
+            Grid.ColumnSpan="5"
+            Grid.RowSpan="5"
+            Margin="50,35,50,35"
+            CornerRadius="0"/>
+
+
+        <!-- das hier ist einfach der rechteckige background für meine überschrift -->
+            <Frame Padding="10"
+               Margin="0, 80, 0, 0"
+               BackgroundColor="#1f1f1f" 
+               CornerRadius="2" 
+               Opacity="1"
+               BorderColor="#3b3b3b"    
+               HeightRequest="50"
+               WidthRequest="300"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Grid.Row="0"
+               Grid.Column="1"
+               Grid.ColumnSpan="3"
+               HasShadow="True">
+            <Label Text="Money Converter Falchetto"  
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   FontSize="18"
+                   TextColor="#c2c2c2"/>
+        </Frame>
+
+        <Label
+            Text="Betrag in Euro"
+            Grid.Column="1"
+            Grid.Row="1"
+            Opacity="0.85"
+            Margin="20,100,0,0"/>
+
+
+        <!--entrybox damit man geldvalues einfügen kann-->
+        <Entry
+            x:Name="EntryEingeben"
+            Placeholder="Eurobetrag eingeben"
+            Grid.Column="1"
+            Grid.Row="2"
+            WidthRequest="200"
+            HeightRequest="100"/>
+
+        <!--hier ist der picker für die zielwährung-->
+        <Picker 
+            Title="Ziel Währung" 
+            x:Name="WaehrungsPicker"
+            Grid.Column="3" Grid.Row="1" 
+            HeightRequest="70" 
+            WidthRequest="150"
+            Margin="0, 80, 0, 0"/>
+
+        <!--entrybox damit man geldvalues einfügen kann-->
+        <Entry
+            x:Name="EntryUmgewandelt"
+            Placeholder="Betrag umgerechnet"
+            IsReadOnly="True"
+            Grid.Column="3"
+            Grid.Row="2"
+            Margin= "40, 100, 0, 0"
+            HeightRequest="100"/>
+
+        <!--cooles image-->
+        <Image Source="Assets/convertArrowsWhite.png" 
+            HeightRequest="100" 
+            Margin="0, 0, 0, 50"
+            WidthRequest="100"
+            Grid.Column="2"
+            Grid.Row="2"
+            Opacity="0.3"/>
+    </Grid>
+</ContentPage>
